@@ -1,0 +1,27 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+	font:70% calibri,sans-serif;
+	text-align:center;
+}
+#header{
+	background-image:radial-gradient(#0014f3, #ffffff);;
+}
+#header h1{
+    margin: 0px;
+}
+#header h2{
+    margin-bottom: auto;
+}
+#header h3{
+    margin:auto
+}
+
+.login{
+        width: 382px;  
+        overflow: hidden;
+        margin-left: ;    
+        padding: 80px;  
+}
