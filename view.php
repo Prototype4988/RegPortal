@@ -9,12 +9,7 @@
   <script src="https://kit.fontawesome.com/6f94d30cd9.js" crossorigin="anonymous"></script>
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 	<style type="text/css">
-		#header{
-			background-image:repeating-radial-gradient(rgb(95, 95, 255),white);
-    		padding: 20px 20px 20px 20px ;
-    		text-align: center;
 
-			}
 			#myInput {
   background-image: url('/css/searchicon.png'); /* Add a search icon to input */
   background-position: 10px 12px; /* Position the search icon */
@@ -25,7 +20,7 @@
   border: 1px solid #ddd; /* Add a grey border */
   margin-bottom: 12px; /* Add some space below the input */
 }
- .fontuser {
+ 		.fontuser {
             position: relative;
         }
           
@@ -35,25 +30,60 @@
             top: 40px;
             color: gray;
         }
+		.topnav {
+			overflow: hidden;
+			background-color: rgb(0, 191, 255);
+		}
+		
+		.topnav a {
+			float: left;
+			color: #000000;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+			align-content: center;
+		}
+		.topnav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+		
+		.topnav a.active {
+			background-color: #4CAF50;
+			color: white;
+		}
 		</style>
 	
 </head>
 <body>
 	<div id ="header">
-                <h1>MAST REGISTRATION PORTAL</h1>
-                <h3>National Institute of Wind Energy</h3>
-                <h4>(Ministry of New and Renewable Energy)</h4>
-            </div>
+
+		<?php
+			include "header.php";
+		?>
+
+    </div>
+
+  <div class="topnav">    
+                
+                <a href="home.php">Home</a>
+                <a href="register.php">Register</a>
+                <a href="view.php" class="active">Database</a>
+                <a>ReportGeneration</a>
+                <a href="settings.php">Settings</a>
+                <a>Export</a>
+                <a href="logout.php">Logout</a>
+    </div>
 	<div class="container">
 	 
-       <div class="fontuser">
-      <p> <label><b>Search</b></label><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by anything..">
-      <i class="fas fa-search"></i></p>
-  </div>
-
+	 <div class="fontuser">
+	<p><br><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by anything..">
+	<i class="fas fa-search"></i></p>
+</div>
 
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=NIWE;port=3306",'root','root' );
+$pdo = new PDO("mysql:host=localhost;dbname=NIWE;port=3306",'root','' );
 $stmt=$pdo->query("select * from register");
 echo '<div class="container">';
      
@@ -156,10 +186,6 @@ $(document).ready(function(){
 <form action="edit.php" method="get">
   		<p style="text-align: center; font-size: 20px;"><input type="integer" name="edit" placeholder="SI no"><input type="submit" name="Edit" value="Edit"></p>
   	</form>
-  	<footer style="text-align: center; font-size: 30px; ">
-  		
-      <a href="home.html" style="color: red;" >Back to Home</a>
-    </footer>
   	
   </body>
   </html>

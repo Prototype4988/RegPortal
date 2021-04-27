@@ -6,20 +6,6 @@ body{
 	font:70% calibri,sans-serif;
 	text-align:center;
 }
-
-#header{
-	background-image:repeating-radial-gradient(rgb(95, 95, 255),white);
-    padding: 20px 20px 20px 20px ;
-}
-#header h1{
-    margin: 0px;
-}
-#header h2{
-    margin-bottom: auto;
-}
-#header h3{
-    margin:auto
-}
 .login{  
     position: absolute;
     background-color: cornflowerblue;
@@ -80,3 +66,27 @@ button
     width: 130px;
     display:block;
 }
+
+.topnav {
+    overflow: hidden;
+    background-color: rgb(0, 191, 255);
+  }
+  
+  .topnav a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    align-content: center;
+  }
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }

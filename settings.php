@@ -1,5 +1,5 @@
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=niwe;port=3306",'root','root' );
+$pdo = new PDO("mysql:host=localhost;dbname=niwe;port=3306",'root','' );
 if(isset($_POST['name']) && isset($_POST['newname'])&& isset($_POST['pass']))
 {
 	$stmt = $pdo->prepare("select DECODE(Password,'secret') as pass from login where Username=:name;");
@@ -102,14 +102,6 @@ if(isset($_POST['name3']) &&  isset($_POST['pass3']))
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<style type="text/css">
-		#header{
-			background-image:repeating-radial-gradient(rgb(95, 95, 255),white);
-    		padding: 20px 20px 20px 20px ;
-    		text-align: center;
-
-			}
-			
-			
 			#name1
 			{
 				display: none;
@@ -120,16 +112,48 @@ if(isset($_POST['name3']) &&  isset($_POST['pass3']))
 				display: none;
 				overflow: hidden;
 			}
+			.topnav {
+			overflow: hidden;
+			background-color: rgb(0, 191, 255);
+			}
+		
+			.topnav a {
+				float: left;
+				color: #000000;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				font-size: 17px;
+				align-content: center;
+			}
+			.topnav a:hover {
+				background-color: #ddd;
+				color: black;
+			}
+			
+			.topnav a.active {
+				background-color: #4CAF50;
+				color: white;
+			}
 		</style>
 	</head>
 <body>
 	<div class="container">
 	<div id ="header">
-                <h1>MAST REGISTRATION PORTAL</h1>
-                <h3>National Institute of Wind Energy</h3>
-                <h4>(Ministry of New and Renewable Energy)</h4>
-            </div>
-     <br>
+		<?php include "header.php" ?>
+    </div>
+	
+	<div class="topnav">    
+                
+                <a href="home.php">Home</a>
+                <a href="register.php" >Register</a>
+                <a href="register.php">Database</a>
+                <a href="register.php">ReportGeneration</a>
+                <a href="settings.php" class="active">Settings</a>
+                <a>Export</a>
+                <a href="logout.php">Logout</a>
+           
+    </div> 
     <div class="btn-group btn-group-justified">
     <div class="btn-group">
     	<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">

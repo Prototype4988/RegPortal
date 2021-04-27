@@ -1,5 +1,5 @@
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=NIWE;port=3306",'root','root' );
+$pdo = new PDO("mysql:host=localhost;dbname=NIWE;port=3306",'root','' );
 if(isset($_GET['name2']))
 {
 $sql="insert into register(NIWE_Reg_No,Station_name,village,district,state,commision_date,Client,latitude,longitude,mast_height,amount,date_receipt,ddno,followup,survey_map,comment)values(:reg,:stat,:vil,:dist,:state,:comdate,:client,:lat,:long,:mast,:amt,:date,:ddno,:follow,:survey,:comment)";
@@ -38,12 +38,10 @@ $dd2= $var1 + ($var2/60) + ($var3/3600);
 	<title>Register</title>
 
 	<style type="text/css">
-		#header{
-			background-image:repeating-radial-gradient(rgb(95, 95, 255),white);
-    		padding: 20px 20px 20px 20px ;
-    		text-align: center;
-
-			}
+		body{
+			margin: 0px;
+			padding: 0px;
+		}
 		#deg1
 		{
 			width: 20px;
@@ -117,15 +115,47 @@ $dd2= $var1 + ($var2/60) + ($var3/3600);
 			display: none;
   			overflow: hidden;
 		}
+		
+		.topnav {
+			overflow: hidden;
+			background-color: rgb(0, 191, 255);
+		}
+		
+		.topnav a {
+			float: left;
+			color: #000000;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+			align-content: center;
+		}
+		.topnav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+		
+		.topnav a.active {
+			background-color: #4CAF50;
+			color: white;
+		}
 	</style>
-	<
 </head>
 <body>
-	 <div id ="header">
-                <h1>MAST REGISTRATION PORTAL</h1>
-                <h3>National Institute of Wind Energy</h3>
-                <h4>(Ministry of New and Renewable Energy)</h4>
-            </div>
+	<div id ="header">
+	 	<?php include "header.php" ?>
+    </div>
+	<div class="topnav">    
+                
+                <a href="home.php">Home</a>
+                <a href="register.php" class="active">Register</a>
+                <a href="view.php">Database</a>
+                <a>ReportGeneration</a>
+                <a href="settings.php">Settings</a>
+                <a>Export</a>
+                <a href="logout.php">Logout</a>
+    </div>
+	<br>
 	<div id="form">
 	<form method="GET">
 		<h2> Registeration form</h2>

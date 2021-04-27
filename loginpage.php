@@ -1,5 +1,5 @@
 <?php
-$pdo = new PDO("mysql:host=localhost;dbname=NIWE;port=3306",'root','root' );
+$pdo = new PDO("mysql:host=localhost;dbname=NIWE;port=3306",'root','' );
 if(isset($_POST['pass']))
 {
  $stmt = $pdo->prepare("select Username from login where Password=ENCODE(:password,'secret')");
@@ -36,10 +36,6 @@ if(strcmp($_POST['pass'],$var2)== 0  &&  strcmp($_POST['name'], $var1) == 0)
     }
 }
 ?>
-
-
-
-
 
 <!DOCTYPE HTML>
 <html>

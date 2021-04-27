@@ -9,7 +9,7 @@
 
 
 session_start();
-$pdo = new PDO("mysql:host=localhost;dbname=NIWE;port=3306",'root','root' );
+$pdo = new PDO("mysql:host=localhost;dbname=NIWE;port=3306",'root','' );
 if(isset($_POST['name2']) )
 
 {
