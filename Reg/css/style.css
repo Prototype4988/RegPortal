@@ -1,0 +1,83 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+	font:70% calibri,sans-serif;
+	text-align:center;
+}
+
+#header{
+	background-image:repeating-radial-gradient(rgb(95, 95, 255),white);
+    padding: 20px 20px 20px 20px ;
+    text-align: center;
+}
+#header h1{
+    margin: 0px;
+}
+#header h2{
+    margin-bottom: auto;
+}
+#header h3{
+    margin:auto
+}
+.login{  
+    position: absolute;
+    background-color: cornflowerblue;
+    margin:10% 0%;
+    right: 20px;
+    border: 3px solid #0015ff;
+    padding: 5%;
+      
+}   
+label{  
+font-size: 17px;  
+}  
+
+#Uname{  
+width: 300px;  
+height: 30px;    
+border-radius: 3px;  
+padding-left: 8px;  
+}  
+#Pass{  
+width: 300px;  
+height: 30px;  
+border-radius: 3px;  
+padding-left: 8px;   
+}  
+#log{  
+width: 300px;  
+height: 30px;  
+border: none;  
+border-radius: 17px;  
+padding-left: 7px;  
+color: blue;  
+}  
+span{  
+color: white;  
+font-size: 17px;  
+}  
+a{  
+float: right;
+}  
+#meow
+{
+    
+    font-size: 30px;
+    float: right;
+    position: absolute;
+    background-color: cornflowerblue;
+    right: 20px;
+    border: 3px solid #0015ff;
+    padding: 5%;
+    margin-right:100px;
+
+
+    }
+button
+{
+    height: 60px;
+    width: 130px;
+    display:block;
+}
