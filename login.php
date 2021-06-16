@@ -149,6 +149,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
             <p>Don't have an account? <a href="signup.php">Sign up now</a>.</p>
+                     <a href="otp-email-working/index.php">Forgot Password</a>
         </form>
     </div>
 </body>
