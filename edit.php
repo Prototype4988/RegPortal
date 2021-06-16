@@ -9,7 +9,7 @@
 
 
 session_start();
-$pdo = new PDO("mysql:host=localhost;dbname=NIWE;port=3306",'root','' );
+$pdo = new PDO("mysql:host=localhost;dbname=NIWE;port=3306",'root','root' );
 if(isset($_POST['name2']) )
 
 {
@@ -22,12 +22,14 @@ if(isset($_POST['name2']) )
 			state=:state,
 			Client=:client,
 			amount=:amt,
+			latitude=:lat,
+			longitude=:long,
 			date_receipt=:receipt,
 			ddno=:ddno
 			where SI_no= :userid";
   	$stmt=$pdo->prepare($sql);
   	$stmt->execute(array(':name' => $_POST['name2'],':date' => $_POST['date'],
-  						':mast' => $_POST['mast'],':vil' => $_POST['village'],':dist' => $_POST['dist'],':state' => $_POST['state'],':client' => $_POST['owner'],':amt' => $_POST['amt'],':receipt' => $_POST['receipt'],':ddno' => $_POST['dd'],':userid' => $_GET['edit']));
+  						':mast' => $_POST['mast'],':vil' => $_POST['village'],':dist' => $_POST['dist'],':state' => $_POST['state'],':client' => $_POST['owner'],':lat' => $_POST['lat1'],':long' => $_POST['long1'],':amt' => $_POST['amt'],':receipt' => $_POST['receipt'],':ddno' => $_POST['dd'],':userid' => $_GET['edit']));
   	$_SESSION['success']="Record edited";
   	header("location:view.php");
   	return;
@@ -55,6 +57,8 @@ if($row === false)
 			<p>Village/taluk name:<input type="text" name="village" value= "<?= $row['village'] ?>"></p>
 			<p>District:<input type="text" name="dist" value= "<?= $row['district'] ?>"></p>
 			<p>State:<input type="text" name="state" value= "<?= $row['state'] ?>"></p>
+			<p>Latitude:<input type="text" name="lat1" value= "<?= $row['latitude'] ?>"></p>
+			<p>Longitude:<input type="text" name="long1" value= "<?= $row['longitude'] ?>"></p>
 			<p>Owned by:<input type="text" name="owner" value= "<?= $row['Client'] ?>"></p>
 			<p>Amount deposited:<input type="text" name="amt" value= "<?= $row['amount'] ?>"></p>
 			<p>Date of receipt:<input type="date" name="receipt" value= "<?= $row['date_receipt'] ?>"></p>
@@ -64,3 +68,4 @@ if($row === false)
 </form>
 </body>
 </html>
+
