@@ -69,7 +69,38 @@ if($row1 === false)
 
 
 	</style>
+	<script type="text/javascript">
+    function Export2Doc(element, filename = ''){
+        var html = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta><title>Export HTML To Doc</title></head><body>";
+        var footer = "</body></html>";
+        var html = html+document.getElementById(element).innerHTML+footer;
+    
+        
+        //link url
+        var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+        
+        //file name
+        filename = filename?filename+'.doc':'document.doc';
+        
+        // Creates the  download link element dynamically
+        var downloadLink = document.createElement("a");
+    
+        document.body.appendChild(downloadLink);
+        
+        //Link to the file
+        downloadLink.href = url;
+            
+        //Setting up file name
+        downloadLink.download = filename;
+            
+        //triggering the function
+        downloadLink.click();
+        //Remove the a tag after donwload starts.
+        document.body.removeChild(downloadLink);
+    }
+</script>
 	<title>Report</title>
+	<div id="exportContent">
 	<b>Dr.Rajesh Katyal</b>
 	<br>
 	<b>DDG & Division Head - WSOM</b>
@@ -192,9 +223,12 @@ echo '<div class="container">';
 <br>
 <br>
 <p><b>Copy for information:</b>The Managing director,New & Renewable Energy Development Cooperation</p>
-
+</div>
 </body>
+
 <footer style="text-align: center;">
 	<button onclick="window.print()">Print</button>
+	<button onclick="Export2Doc('exportContent','report');">Export as .doc</button>
 </footer>
+
 </html>
