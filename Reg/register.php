@@ -9,8 +9,16 @@ $num = "true";
 while($num != "false")
 {
 $mad = 'C-WET-PM-R-';
-$mad1=rand(1,100);
-$mad2=strval($mad1);
+$myfile = fopen("samp.txt", "r") or die("Unable to open file!");
+
+$var1234 = fread($myfile,filesize("samp.txt"));;
+
+$myfile = fopen("samp.txt", "w") or die("Unable to open file!");
+$var1234=$var1234+1;
+fwrite($myfile, $var1234);
+fclose($myfile);
+
+$mad2=strval($var1234);
 $mad3=$mad.$mad2;
 $stmt1=$pdo->prepare("select * from register where NIWE_Reg_No=:reg1");
 $stmt1->execute([':reg1' => $mad3]); 
