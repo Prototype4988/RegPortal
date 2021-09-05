@@ -10,8 +10,8 @@
 		$mail->SMTPAuth = TRUE;
 		$mail->SMTPSecure = 'tls'; // tls or ssl
 		$mail->Port     = "587";
-		$mail->Username = "geoffrick7@gmail.com";
-		$mail->Password = "victor0707creed";
+		$mail->Username = "geoffrick7@gmail.com"; //change this to your preferred mail
+		$mail->Password = "victor0707creed";//change password
 		$mail->Host     = "smtp.gmail.com";
 		$mail->Mailer   = "smtp";
 		$mail->SetFrom("geoffrick7@gmail.com", "web");
